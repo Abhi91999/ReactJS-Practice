@@ -24,14 +24,20 @@ function App() {
     setMode('dark');
     document.body.style.backgroundColor = 'ede6f6';
     showAlert("The dark mode has been enabled", "Success");
-    document.title = "TextUtils - DarkMode";
+    
+    setInterval(() => {
+      document.title = "TextUtils - DarkMode";
+    }, 2000);
     }
     else
     {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("The light mode has been enabled", "Success");
-      document.title = "TextUtils - LightMode";
+      
+      setInterval(() => {
+        document.title = "TextUtils - LightMode";
+      }, 1500);
     }
   }
   return (
