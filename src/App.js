@@ -23,7 +23,7 @@ function App() {
         setAlert(null);
       }, 3000);
   }
-  let toggleMode = () => {
+  let toggleMode = (cls) => {
     if(mode === 'light'){
     setMode('dark');
     document.body.style.backgroundColor = 'ede6f6';
@@ -54,7 +54,7 @@ function App() {
     <div className='container'>
     <Routes>
           <Route exact path="/about"
-            element ={<About />}>
+            element ={<About /> }mode={mode}>
           </Route>
           <Route exact path="/">
           </Route>

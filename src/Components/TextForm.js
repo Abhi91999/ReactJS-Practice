@@ -44,22 +44,22 @@ export default function TextForm(props) {
         {/* <label for="myBox" class="form-label">Example textarea</label> */}
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor : props.mode === 'light' ? 'white' : '#ede6f6'}} id="myBox" rows="14"></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}> Convert to upper case</button>
-        <button className="btn btn-primary mx-2" onClick={handleLoClick}> Convert to lower case</button>
-        <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear Text</button>
-        <button className="btn btn-primary mx-2" onClick={handleCopy}> Copy</button>
-        <button className="btn btn-primary mx-2" onClick={handleExtraSpace}> Remove Extra Spaces</button>
+        <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}> Convert to upper case</button>
+        <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}> Convert to lower case</button>
+        <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}> Clear Text</button>
+        <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}> Copy</button>
+        <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpace}> Remove Extra Spaces</button>
     </div>
-    < div className='conatiner' my-3>
+    {/* < div className='conatiner' my-3>
         <h1>Your Text Summary</h1>
-        <p>{text.split(" ").length} words and {text.length} characters</p>
-        <p>{0.008 * text.split(" ").length} Minutes to read</p>
+        <p>{text.split(" ").filter((element) =>{return element.length!==0}).length} words and {text.length} characters</p>
+        <p>{0.008 * text.split(" ").filter((element) =>{return element.length!==0}).length} Minutes to read</p>
         <h2>Preview</h2>
-        <p>{text.length>0?text:"Enter Something to preview it here"}</p>
+        <p>{text.length>0?text:"Nothing to preview!!!"}</p>
         <p>{text1}</p>
         <textarea className="form-control" value={text1} onChange={handleOnChange} id="myBox" rows="14"></textarea>
         <button className="btn btn-pimary" onClick={handleUpClick}> Convert to upper case</button>
-    </div>
+    </div> */}
     </>
   )
 }
